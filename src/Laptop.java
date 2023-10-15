@@ -43,10 +43,10 @@ public class Laptop {
         for (int i = 0; i < userRequest.length(); i++) {
             if(1 == Character.getNumericValue(userRequest.charAt(i))) {
                 System.out.println("Укажите диапазон искомой диагональ");
-                System.out.println("от ");
+                System.out.println("от:");
                 String startDiagonal = scan.nextLine();
                 double doubleParseStartDiagonal = Double.parseDouble(startDiagonal);
-                System.out.println("до ");
+                System.out.println("до:");
                 String endDiagonal = scan.nextLine();
                 double doubleParseEndDiagonal = Double.parseDouble(endDiagonal);
                 for (Laptop tempLaptop : laptop) {
@@ -57,10 +57,10 @@ public class Laptop {
             }
             if(2 == Character.getNumericValue(userRequest.charAt(i))) {
                 System.out.println("Укажите нужный объем ОЗУ");
-                System.out.println("от ");
+                System.out.println("от:");
                 String startRam = scan.nextLine();
                 int intParseStartRam = Integer.parseInt(startRam);
-                System.out.println("от ");
+                System.out.println("до:");
                 String endRam = scan.nextLine();
                 int intParseEndRam = Integer.parseInt(endRam);
                 for (Laptop tempLaptop : laptop) {
@@ -71,10 +71,14 @@ public class Laptop {
             }
             if(3 == Character.getNumericValue(userRequest.charAt(i))) {
                 System.out.println("Укажите нужный размер жесткого диска");
-                String enterMemory = scan.nextLine();
-                int intParseEnterMemory = Integer.parseInt(enterMemory);
+                System.out.println("от:");
+                String startMemory = scan.nextLine();
+                int intParseStartMemory = Integer.parseInt(startMemory);
+                System.out.println("до:");
+                String endMemory = scan.nextLine();
+                int intParseEndMemory = Integer.parseInt(endMemory);
                 for (Laptop tempLaptop : laptop) {
-                    if (intParseEnterMemory != tempLaptop.memory){
+                    if (intParseStartMemory > tempLaptop.memory || intParseEndMemory < tempLaptop.memory){
                         listLaptop.remove(tempLaptop);
                     }
                 }
