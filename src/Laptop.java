@@ -42,21 +42,29 @@ public class Laptop {
 
         for (int i = 0; i < userRequest.length(); i++) {
             if(1 == Character.getNumericValue(userRequest.charAt(i))) {
-                System.out.println("Укажите искомую диагональ");
-                String enterDiagonal = scan.nextLine();
-                double doubleParseEnterDiagonal = Double.parseDouble(enterDiagonal);
+                System.out.println("Укажите диапазон искомой диагональ");
+                System.out.println("от ");
+                String startDiagonal = scan.nextLine();
+                double doubleParseStartDiagonal = Double.parseDouble(startDiagonal);
+                System.out.println("до ");
+                String endDiagonal = scan.nextLine();
+                double doubleParseEndDiagonal = Double.parseDouble(endDiagonal);
                 for (Laptop tempLaptop : laptop) {
-                    if (doubleParseEnterDiagonal != tempLaptop.diagonal){
+                    if (doubleParseStartDiagonal > tempLaptop.diagonal || doubleParseEndDiagonal < tempLaptop.diagonal ){
                         listLaptop.remove(tempLaptop);
                     }
                 }
             }
             if(2 == Character.getNumericValue(userRequest.charAt(i))) {
                 System.out.println("Укажите нужный объем ОЗУ");
-                String enterRam = scan.nextLine();
-                int intParseEnterRam = Integer.parseInt(enterRam);
+                System.out.println("от ");
+                String startRam = scan.nextLine();
+                int intParseStartRam = Integer.parseInt(startRam);
+                System.out.println("от ");
+                String endRam = scan.nextLine();
+                int intParseEndRam = Integer.parseInt(endRam);
                 for (Laptop tempLaptop : laptop) {
-                    if (intParseEnterRam != tempLaptop.ram){
+                    if (intParseStartRam > tempLaptop.ram || intParseEndRam < tempLaptop.ram ){
                         listLaptop.remove(tempLaptop);
                     }
                 }
