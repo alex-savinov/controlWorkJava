@@ -94,13 +94,13 @@ public class Laptop {
     @Override
     public String toString() {
         return   String.format(
-                "\n\nНазвание: %s \n" +
+                "\nНазвание: %s \n" +
                         "Производитель: %s \n" +
                         "Процессор: %s\n" +
                         "Диагональ: %.1f\n" +
                         "ОЗУ: %d\n" +
                         "Жесткий диск: %d\n" +
-                        "Вес: %d",
+                        "Вес: %d\n",
                 name, manufacturer, processor, diagonal, ram, memory, weight);
 
     }
